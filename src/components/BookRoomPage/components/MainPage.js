@@ -1,6 +1,18 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Box, Button } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Box,
+  Button,
+  Tooltip,
+} from "@mui/material";
 import BookRoom from "./BookRoom";
+
+//icons
+import BedIcon from "@mui/icons-material/Bed";
+import RoomServiceIcon from "@mui/icons-material/RoomService";
+import PaymentIcon from "@mui/icons-material/Payment";
 
 const MainPage = () => {
   return (
@@ -25,19 +37,25 @@ const MainPage = () => {
             color="inherit"
             onClick={() => (window.location.href = "/reserve-room")}
           >
-            Rooms
+            <Tooltip title="Rooms">
+              <BedIcon />
+            </Tooltip>
           </Button>
           <Button
             color="inherit"
             onClick={() => (window.location.href = "/reserve-service")}
           >
-            Services
+            <Tooltip title="Services">
+              <RoomServiceIcon />
+            </Tooltip>
           </Button>
           <Button
             color="inherit"
             onClick={() => (window.location.href = "/make-payment")}
           >
-            Payments
+            <Tooltip title="Payments">
+              <PaymentIcon />
+            </Tooltip>
           </Button>
         </Toolbar>
       </AppBar>
