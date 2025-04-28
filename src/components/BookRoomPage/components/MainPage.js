@@ -33,30 +33,30 @@ const MainPage = () => {
             NIAS HOTEL
           </Typography>
 
-          <Button
-            color="inherit"
-            onClick={() => (window.location.href = "/reserve-room")}
-          >
-            <Tooltip title="Rooms">
+          <Tooltip title="Rooms">
+            <Button
+              color="inherit"
+              onClick={() => (window.location.href = "/reserve-room")}
+            >
               <BedIcon />
-            </Tooltip>
-          </Button>
-          <Button
-            color="inherit"
-            onClick={() => (window.location.href = "/reserve-service")}
-          >
-            <Tooltip title="Services">
+            </Button>
+          </Tooltip>
+          <Tooltip title="Services">
+            <Button
+              color="inherit"
+              onClick={() => (window.location.href = "/reserve-service")}
+            >
               <RoomServiceIcon />
-            </Tooltip>
-          </Button>
-          <Button
-            color="inherit"
-            onClick={() => (window.location.href = "/make-payment")}
-          >
-            <Tooltip title="Payments">
+            </Button>
+          </Tooltip>
+          <Tooltip title="Payments">
+            <Button
+              color="inherit"
+              onClick={() => (window.location.href = "/make-payment")}
+            >
               <PaymentIcon />
-            </Tooltip>
-          </Button>
+            </Button>
+          </Tooltip>
         </Toolbar>
       </AppBar>
 
