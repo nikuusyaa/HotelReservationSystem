@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Alert, Snackbar, Stack, Typography } from "@mui/material";
-import PhoneNumberField from "./PhoneNumberField";
-import NameField from "./NameField";
-import SurnameField from "./SurnameField";
-import CreateReservationButton from "./CreateReservationButton";
-import RoomList from "./roomList";
+import PhoneNumberField from "./BookRoomPhoneField";
+import NameField from "./BookRoomNameField";
+import SurnameField from "./BookRoomSurnameField";
+import CreateReservationButton from "./BookRoomButton";
+import RoomList from "./BookRoomTypesList";
 import useBookRoom from "../hooks/useBookRoom";
 
 const BookRoom = () => {
@@ -15,7 +15,7 @@ const BookRoom = () => {
   const [clicked, setClicked] = useState(false);
   const { bookRoom, loading, error, response } = useBookRoom();
   const [openSnackbar, setOpenSnackbar] = useState(false);
-  console.log(loading, response);
+  
   /*useState  for tracking if all fields are filled correctly*/
   const [disabled, setDisabled] = useState(true);
 
