@@ -15,7 +15,7 @@ const BookRoom = () => {
   const [clicked, setClicked] = useState(false);
   const { bookRoom, loading, error, response } = useBookRoom();
   const [openSnackbar, setOpenSnackbar] = useState(false);
-
+  console.log(loading, response);
   /*useState  for tracking if all fields are filled correctly*/
   const [disabled, setDisabled] = useState(true);
 
