@@ -1,11 +1,11 @@
 import "./App.css";
-import MainPage from "./components/BookRoomPage/components/MainPage";
+import BookRoom from "./components/BookRoom/components/BookRoomPage";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <MainPage />
+        <BookRoom />
       </header>
     </div>
   );
