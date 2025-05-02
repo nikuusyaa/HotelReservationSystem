@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Alert, Snackbar, Stack, Typography } from "@mui/material";
+import { Alert, Stack, Typography } from "@mui/material";
 import PhoneNumberField from "./BookRoomPhoneField";
 import NameField from "./BookRoomNameField";
 import SurnameField from "./BookRoomSurnameField";
@@ -7,7 +7,7 @@ import CreateReservationButton from "./BookRoomButton";
 import RoomList from "./BookRoomTypesList";
 import useBookRoom from "../hooks/useBookRoom";
 import BookRoomCalendar from "./BookRoomCalendar";
-import { borderRadius } from "@mui/system";
+import BookRoomSnackbar from "./BookRoomSnackbar";
 
 const BookRoom = () => {
   const [name, setName] = useState("");
@@ -61,7 +61,6 @@ const BookRoom = () => {
       </Typography>
       <RoomList value={selectedRoom} onChange={setSelectedRoom} />
       <Stack
-        direction="column"
         component="form"
         sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
         noValidate
@@ -84,16 +83,7 @@ const BookRoom = () => {
         />
       </Stack>
 
-      <Snackbar
-        open={openSnackbar}
-        autoHideDuration={3000}
-        onClose={() => setOpenSnackbar(false)}
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-      >
-        <Alert severity="success" variant="filled" sx={{ width: "100%" }}>
-          Thank you! Your reservation is created successfully!
-        </Alert>
-      </Snackbar>
+      <BookRoomSnackbar openSnackbar={openSnackbar}setOpenSnackbar ={setOpenSnackbar}/>
     </Stack>
   );
 };
