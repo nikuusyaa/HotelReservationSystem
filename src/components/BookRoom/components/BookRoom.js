@@ -8,6 +8,8 @@ import RoomList from "./BookRoomTypesList";
 import useBookRoom from "../hooks/useBookRoom";
 import BookRoomCalendar from "./BookRoomCalendar";
 import BookRoomSnackbar from "./BookRoomSnackbar";
+import { addDays } from "date-fns";
+import { formatDateTime } from "../utils/formatDateTime";
 
 export default function BookRoom() {
   const [name, setName] = useState("");
@@ -17,6 +19,13 @@ export default function BookRoom() {
   const [clicked, setClicked] = useState(false);
   const { bookRoom, loading, error, response } = useBookRoom();
   const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [date, setDate] = useState([
+    {
+      startDate: new Date(),
+      endDate: addDays(new Date(), 7),
+      key: "selection",
+    },
+  ]);
 
   /*useState  for tracking if all fields are filled correctly*/
   const [disabled, setDisabled] = useState(true);
@@ -40,6 +49,8 @@ export default function BookRoom() {
         surname: surname,
         phone_num: phone,
         room_type: selectedRoom,
+        "check-in-date": formatDateTime(date[0].startDate),
+        "check-out-date": formatDateTime(date[0].endDate),
       });
       setOpenSnackbar(true);
     } catch (e) {}
@@ -72,7 +83,7 @@ export default function BookRoom() {
             <PhoneNumberField phone={phone} setPhone={setPhone} />
             {error && <Alert severity="error">Error: {error.message}</Alert>}
           </Stack>
-          <BookRoomCalendar />
+          <BookRoomCalendar date={date} setDate={setDate} />
         </Stack>
 
         <CreateReservationButton
