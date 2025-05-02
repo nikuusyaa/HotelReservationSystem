@@ -26,7 +26,7 @@ export default function CreateReservationButton({
           onClick();
         }}
       >
-        "RESERVE"
+        RESERVE
       </Button>
     </Box>
   );

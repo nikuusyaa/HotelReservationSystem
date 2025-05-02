@@ -57,16 +57,8 @@ export default function BookRoom() {
   };
 
   return (
-    <Stack
-      direction="column"
-      alignItems="flex-start"
-      sx={{
-        width: "100%",
-        maxWidth: "800px",
-      }}
-      spacing={2}
-    >
-      <Typography fontSize="25px" fontWeight={900}>
+    <Stack alignItems="center" justifyContent="center" spacing={2}>
+      <Typography color="primary" fontSize={25} fontWeight={900}>
         BOOK THE ROOM IN OUR HOTEL
       </Typography>
       <RoomList value={selectedRoom} onChange={setSelectedRoom} />
@@ -76,6 +68,9 @@ export default function BookRoom() {
         noValidate
         autoComplete="off"
       >
+        <Typography pb={2} fontSize={24} fontWeight={900}>
+          Reservation Details
+        </Typography>
         <Stack direction="row">
           <Stack sx={{ p: 1 }}>
             <NameField name={name} setName={setName} />
