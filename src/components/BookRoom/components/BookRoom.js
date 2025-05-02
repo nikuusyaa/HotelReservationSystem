@@ -7,6 +7,7 @@ import CreateReservationButton from "./BookRoomButton";
 import RoomList from "./BookRoomTypesList";
 import useBookRoom from "../hooks/useBookRoom";
 import BookRoomCalendar from "./BookRoomCalendar";
+import { borderRadius } from "@mui/system";
 
 const BookRoom = () => {
   const [name, setName] = useState("");
@@ -66,11 +67,15 @@ const BookRoom = () => {
         noValidate
         autoComplete="off"
       >
-        <NameField name={name} setName={setName} />
-        <SurnameField surname={surname} setSurname={setSurname} />
-        <PhoneNumberField phone={phone} setPhone={setPhone} />
-        {error && <Alert severity="error">Error: {error.message}</Alert>}
-        <BookRoomCalendar/>
+        <Stack direction="row">
+          <Stack sx={{ p: 1 }}>
+            <NameField name={name} setName={setName} />
+            <SurnameField surname={surname} setSurname={setSurname} />
+            <PhoneNumberField phone={phone} setPhone={setPhone} />
+            {error && <Alert severity="error">Error: {error.message}</Alert>}
+          </Stack>
+          <BookRoomCalendar />
+        </Stack>
         <CreateReservationButton
           disabled={disabled}
           setClicked={setClicked}
