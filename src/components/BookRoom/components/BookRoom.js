@@ -49,8 +49,8 @@ export default function BookRoom() {
         surname: surname,
         phone_num: phone,
         room_type: selectedRoom,
-        "check-in-date": formatDateTime(date[0].startDate),
-        "check-out-date": formatDateTime(date[0].endDate),
+        check_in_date: formatDateTime(date[0].startDate),
+        check_out_date: formatDateTime(date[0].endDate),
       });
       setOpenSnackbar(true);
     } catch (e) {}
