@@ -11,14 +11,12 @@ function App() {
       <AppBar position="fixed" color="primary" elevation={4}>
         <Toolbar>
           <Typography
-            variant="h2"
-            component="h1"
+            fontSize={50}
             sx={{
               flexGrow: 1,
               textAlign: "center",
               fontWeight: 700,
               letterSpacing: "0.15em",
-              pl: 30,
             }}
           >
             NIAS HOTEL
