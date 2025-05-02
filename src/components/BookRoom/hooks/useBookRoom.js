@@ -51,10 +51,8 @@ export default function useBookRoom() {
       }
       const data = await res.json();
       setResponse(data);
-      console.log("Booking response:", data);
       return data;
     } catch (err) {
-      console.error("Booking exception:", err);
       setError(err);
       throw err;
     } finally {
