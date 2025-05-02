@@ -2,8 +2,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import BookRoom from "./components/BookRoom/components/BookRoomPage";
-import { AppBar, Toolbar, Typography, Button, Tooltip } from "@mui/material";
-import LoginIcon from "@mui/icons-material/Login";
+import { AppBar, Toolbar, Typography } from "@mui/material";
+import LoginBehavior from "./components/Login/components/LoginBehavior";
 
 function App() {
   return (
@@ -23,14 +23,7 @@ function App() {
               >
                 NIAS HOTEL
               </Typography>
-              <Tooltip title="Login">
-                <Button
-                  color="inherit"
-                  onClick={() => (window.location.href = "/login")}
-                >
-                  <LoginIcon />
-                </Button>
-              </Tooltip>
+              <LoginBehavior />
             </Toolbar>
           </AppBar>
 
