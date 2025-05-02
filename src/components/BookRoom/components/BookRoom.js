@@ -6,6 +6,7 @@ import SurnameField from "./BookRoomSurnameField";
 import CreateReservationButton from "./BookRoomButton";
 import RoomList from "./BookRoomTypesList";
 import useBookRoom from "../hooks/useBookRoom";
+import BookRoomCalendar from "./BookRoomCalendar";
 
 const BookRoom = () => {
   const [name, setName] = useState("");
@@ -15,7 +16,7 @@ const BookRoom = () => {
   const [clicked, setClicked] = useState(false);
   const { bookRoom, loading, error, response } = useBookRoom();
   const [openSnackbar, setOpenSnackbar] = useState(false);
-  
+
   /*useState  for tracking if all fields are filled correctly*/
   const [disabled, setDisabled] = useState(true);
 
@@ -69,6 +70,7 @@ const BookRoom = () => {
         <SurnameField surname={surname} setSurname={setSurname} />
         <PhoneNumberField phone={phone} setPhone={setPhone} />
         {error && <Alert severity="error">Error: {error.message}</Alert>}
+        <BookRoomCalendar/>
         <CreateReservationButton
           disabled={disabled}
           setClicked={setClicked}
