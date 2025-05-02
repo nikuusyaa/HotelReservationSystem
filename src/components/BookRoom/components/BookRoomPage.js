@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import BookRoom from "./BookRoom";
 
-const MainPage = () => {
+export default function MainPage() {
   return (
     <Box
       sx={{
@@ -16,6 +16,4 @@ const MainPage = () => {
       </Box>
     </Box>
   );
-};
-
-export default MainPage;
+}

@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 import { TextField } from "@mui/material";
 import { useState } from "react";
 
-const SurnameField = ({surname, setSurname}) => {
+export default function SurnameField({ surname, setSurname }) {
   const [touchedSurname, setTouchedSurname] = useState(false);
   const surnameError = touchedSurname && surname.trim() === "";
 
@@ -45,6 +45,4 @@ const SurnameField = ({surname, setSurname}) => {
       />
     </>
   );
-};
-
-export default SurnameField;
+}

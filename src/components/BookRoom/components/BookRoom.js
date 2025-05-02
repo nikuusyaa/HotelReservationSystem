@@ -9,7 +9,7 @@ import useBookRoom from "../hooks/useBookRoom";
 import BookRoomCalendar from "./BookRoomCalendar";
 import BookRoomSnackbar from "./BookRoomSnackbar";
 
-const BookRoom = () => {
+export default function BookRoom() {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [phone, setPhone] = useState("");
@@ -52,7 +52,6 @@ const BookRoom = () => {
       sx={{
         width: "100%",
         maxWidth: "800px",
-        p: 2,
       }}
       spacing={2}
     >
@@ -75,6 +74,7 @@ const BookRoom = () => {
           </Stack>
           <BookRoomCalendar />
         </Stack>
+
         <CreateReservationButton
           disabled={disabled}
           setClicked={setClicked}
@@ -82,10 +82,10 @@ const BookRoom = () => {
           onClick={handleReserve}
         />
       </Stack>
-
-      <BookRoomSnackbar openSnackbar={openSnackbar}setOpenSnackbar ={setOpenSnackbar}/>
+      <BookRoomSnackbar
+        openSnackbar={openSnackbar}
+        setOpenSnackbar={setOpenSnackbar}
+      />
     </Stack>
   );
-};
-
-export default BookRoom;
+}

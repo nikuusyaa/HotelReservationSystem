@@ -2,12 +2,12 @@ import React from "react";
 import { Button } from "@mui/material";
 import { Box } from "@mui/material";
 
-const CreateReservationButton = ({
+export default function CreateReservationButton({
   setClicked,
   disabled,
   onClick,
   clicked,
-}) => {
+}) {
   return (
     <Box padding="10px">
       <Button
@@ -30,6 +30,4 @@ const CreateReservationButton = ({
       </Button>
     </Box>
   );
-};
-
-export default CreateReservationButton;
+}

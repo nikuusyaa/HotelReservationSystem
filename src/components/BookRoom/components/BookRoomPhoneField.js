@@ -2,8 +2,7 @@ import React from "react";
 import { Typography, TextField } from "@mui/material";
 import { useState } from "react";
 
-const PhoneNumberField = ({phone, setPhone}) => {
-
+export default function PhoneNumberField({ phone, setPhone }) {
   const [touched, setTouched] = useState(false);
 
   // Error checking
@@ -61,6 +60,4 @@ const PhoneNumberField = ({phone, setPhone}) => {
       />
     </>
   );
-};
-
-export default PhoneNumberField;
+}

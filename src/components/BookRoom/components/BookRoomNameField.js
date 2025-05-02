@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 import { TextField } from "@mui/material";
 import { useState } from "react";
 
-const NameField = ({ name, setName }) => {
+export default function NameField({ name, setName }) {
   // track whether we've “touched” it, so we don't show an error on first render
   const [touched, setTouched] = useState(false);
 
@@ -19,20 +19,20 @@ const NameField = ({ name, setName }) => {
         sx={{
           "& .MuiOutlinedInput-root": {
             "& fieldset": {
-              borderColor: nameError ? "red" : "white", // Цвет рамки в зависимости от ошибки
+              borderColor: nameError ? "red" : "white",
             },
             "& input": {
-              color: "white", // Цвет текста
+              color: "white",
             },
           },
           "& .MuiInputLabel-root": {
-            color: "white", // Цвет метки
+            color: "white",
             "&.Mui-focused": {
-              color: "white", // Цвет метки, когда поле в фокусе
+              color: "white",
             },
           },
           "& .MuiInputLabel-shrink": {
-            color: "white", // Цвет метки, когда она сжата (вверху)
+            color: "white",
           },
         }}
         fullWidth
@@ -48,6 +48,4 @@ const NameField = ({ name, setName }) => {
       />
     </>
   );
-};
-
-export default NameField;
+}
