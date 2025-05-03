@@ -9,7 +9,7 @@ import useLogin from "../hooks/useLogin";
 
 export default function LoginPage() {
   const [phone, setPhone] = useState("");
-  const { login, loading, error } = useLogin();
+  const { login, loading } = useLogin();
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const navigate = useNavigate();
 

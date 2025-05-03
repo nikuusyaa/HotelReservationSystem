@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Alert, Stack, Typography } from "@mui/material";
+import { Alert, Snackbar, Stack, Typography } from "@mui/material";
 import BookRoomPhoneField from "./BookRoomPhoneField";
 import BookRoomNameField from "./BookRoomNameField";
 import BookRoomSurnameField from "./BookRoomSurnameField";
@@ -19,6 +19,7 @@ export default function BookRoom() {
   const [clicked, setClicked] = useState(false);
   const { bookRoom, error } = useBookRoom();
   const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -53,7 +54,9 @@ export default function BookRoom() {
         check_out_date: formatDateTime(date[0].endDate),
       });
       setOpenSnackbar(true);
-    } catch (e) {}
+    } catch (e) {
+      setSnackbarOpen(true);
+    }
   };
 
   return (
@@ -76,7 +79,23 @@ export default function BookRoom() {
             <BookRoomNameField name={name} setName={setName} />
             <BookRoomSurnameField surname={surname} setSurname={setSurname} />
             <BookRoomPhoneField phone={phone} setPhone={setPhone} />
-            {error && <Alert severity="error">Error: {error.message}</Alert>}
+            {error && (
+              <Snackbar
+                open={snackbarOpen}
+                autoHideDuration={4000}
+                onClose={() => setSnackbarOpen(false)}
+                anchorOrigin={{ vertical: "top", horizontal: "center" }}
+                sx={{ mt: 8 }}
+              >
+                <Alert
+                  onClose={() => setSnackbarOpen(false)}
+                  severity="error"
+                  sx={{ width: "100%" }}
+                >
+                  {"Failed to Create Reservation"}
+                </Alert>
+              </Snackbar>
+            )}
           </Stack>
           <BookRoomCalendar date={date} setDate={setDate} />
         </Stack>
