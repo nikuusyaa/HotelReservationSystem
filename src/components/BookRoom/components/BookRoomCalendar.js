@@ -7,11 +7,8 @@ export default function BookRoomCalendar({ date, setDate }) {
   return (
     <Box
       sx={{
-        border: 1,
-        borderColor: "grey.300",
         borderRadius: 2,
         overflow: "hidden",
-        boxShadow: 1,
       }}
     >
       <DateRange ranges={date} onChange={(item) => setDate([item.selection])} />
