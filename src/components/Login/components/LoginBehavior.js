@@ -1,4 +1,4 @@
-import {  Tooltip } from "@mui/material";
+import { Tooltip } from "@mui/material";
 import LoginPopover from "./LoginPopover";
 import { useState } from "react";
 import React from "react";
@@ -15,7 +15,7 @@ export default function LoginBehavior() {
   };
   return (
     <>
-      <Tooltip title="Login">
+      <Tooltip title="Log In">
         <IconButton color="inherit" onClick={handleClick}>
           <LoginIcon />
         </IconButton>

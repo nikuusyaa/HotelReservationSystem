@@ -26,6 +26,7 @@ function App() {
                   textAlign: "center",
                   fontWeight: 700,
                   letterSpacing: "0.15em",
+                  pl: 6,
                 }}
               >
                 NIAS HOTEL
