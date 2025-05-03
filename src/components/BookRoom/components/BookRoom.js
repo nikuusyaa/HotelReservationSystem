@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Alert, Snackbar, Stack, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import BookRoomPhoneField from "./BookRoomPhoneField";
 import BookRoomNameField from "./BookRoomNameField";
 import BookRoomSurnameField from "./BookRoomSurnameField";
@@ -7,9 +7,9 @@ import BookRoomButton from "./BookRoomButton";
 import BookRoomTypesList from "./BookRoomTypesList";
 import useBookRoom from "../hooks/useBookRoom";
 import BookRoomCalendar from "./BookRoomCalendar";
-import BookRoomSnackbar from "./BookRoomSnackbar";
 import { addDays } from "date-fns";
 import { formatDateTime } from "../utils/formatDateTime";
+import CustomSnackbar from "../../CustomSnackbar";
 
 export default function BookRoom() {
   const [name, setName] = useState("");
@@ -80,21 +80,12 @@ export default function BookRoom() {
             <BookRoomSurnameField surname={surname} setSurname={setSurname} />
             <BookRoomPhoneField phone={phone} setPhone={setPhone} />
             {error && (
-              <Snackbar
-                open={snackbarOpen}
-                autoHideDuration={4000}
-                onClose={() => setSnackbarOpen(false)}
-                anchorOrigin={{ vertical: "top", horizontal: "center" }}
-                sx={{ mt: 8 }}
-              >
-                <Alert
-                  onClose={() => setSnackbarOpen(false)}
-                  severity="error"
-                  sx={{ width: "100%" }}
-                >
-                  {"Failed to Create Reservation"}
-                </Alert>
-              </Snackbar>
+              <CustomSnackbar
+                openSnackbar={snackbarOpen}
+                setOpenSnackbar={setSnackbarOpen}
+                text="Failed to Create Reservation"
+                severity="error"
+              />
             )}
           </Stack>
           <BookRoomCalendar date={date} setDate={setDate} />
@@ -107,9 +98,11 @@ export default function BookRoom() {
           onClick={handleReserve}
         />
       </Stack>
-      <BookRoomSnackbar
+      <CustomSnackbar
         openSnackbar={openSnackbar}
         setOpenSnackbar={setOpenSnackbar}
+        text="Thank you! Your reservation is created successfully!"
+        severity="success"
       />
     </Stack>
   );

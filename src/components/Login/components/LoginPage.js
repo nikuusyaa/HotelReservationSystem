@@ -3,9 +3,10 @@ import BookRoomPhoneField from "../../BookRoom/components/BookRoomPhoneField";
 import { useState } from "react";
 import { grey } from "@mui/material/colors";
 import CustomButton from "../../CustomButton";
-import { Typography, Snackbar, Alert } from "@mui/material";
+import { Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import useLogin from "../hooks/useLogin";
+import CustomSnackbar from "../../CustomSnackbar";
 
 export default function LoginPage() {
   const [phone, setPhone] = useState("");
@@ -34,7 +35,6 @@ export default function LoginPage() {
       <Typography fontSize={25} fontWeight={900} pt={2} align="center">
         Log in to User Section
       </Typography>
-
       <Stack p={10} pt={3} spacing={2}>
         <BookRoomPhoneField phone={phone} setPhone={setPhone} />
 
@@ -44,22 +44,12 @@ export default function LoginPage() {
           disabled={phone.length !== 9 || loading}
         />
       </Stack>
-
-      <Snackbar
-        open={snackbarOpen}
-        autoHideDuration={4000}
-        onClose={() => setSnackbarOpen(false)}
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        sx={{ mt: 8 }}
-      >
-        <Alert
-          onClose={() => setSnackbarOpen(false)}
-          severity="error"
-          sx={{ width: "100%" }}
-        >
-          {"Failed to Log in"}
-        </Alert>
-      </Snackbar>
+      <CustomSnackbar
+        openSnackbar={snackbarOpen}
+        setOpenSnackbar={setSnackbarOpen}
+        text="Failed to Log in"
+        severity="error"
+      />
     </Box>
   );
 }
