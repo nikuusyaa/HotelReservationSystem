@@ -4,6 +4,8 @@ import "./App.css";
 import BookRoom from "./components/BookRoom/components/BookRoomPage";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import LoginBehavior from "./components/Login/components/LoginBehavior";
+import UserReservationPage from "./components/UserReservationPage/components/UserReservationPage";
+import LoginPage from "./components/Login/components/LoginPage";
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
             <Route path="/" element={<Navigate to="/booking" replace />} />
 
             <Route path="/booking" element={<BookRoom />} />
+            <Route path="/user-reservation" element={<UserReservationPage />} />
+            <Route path="/log-in" element={<LoginPage />} />
 
             <Route path="*" element={<Navigate to="/booking" replace />} />
           </Routes>
