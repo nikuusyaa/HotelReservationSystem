@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 import { TextField } from "@mui/material";
 import { useState } from "react";
 
-export default function NameField({ name, setName }) {
+export default function BookRoomNameField({ name, setName }) {
   // track whether we've “touched” it, so we don't show an error on first render
   const [touched, setTouched] = useState(false);
 

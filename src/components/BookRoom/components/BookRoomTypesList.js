@@ -12,7 +12,7 @@ import {
 import useRoomTypes from "../hooks/useRoomTypes";
 import { Skeleton } from "@mui/material";
 
-export default function RoomList({ value, onChange }) {
+export default function BookRoomTypesList({ value, onChange }) {
   const { roomTypes, loading, error } = useRoomTypes();
 
   if (loading) {

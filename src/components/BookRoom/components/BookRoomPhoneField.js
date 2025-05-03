@@ -2,7 +2,7 @@ import React from "react";
 import { Typography, TextField } from "@mui/material";
 import { useState } from "react";
 
-export default function PhoneNumberField({ phone, setPhone }) {
+export default function BookRoomPhoneField({ phone, setPhone }) {
   const [touched, setTouched] = useState(false);
 
   // Error checking

@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Alert, Stack, Typography } from "@mui/material";
-import PhoneNumberField from "./BookRoomPhoneField";
-import NameField from "./BookRoomNameField";
-import SurnameField from "./BookRoomSurnameField";
-import CreateReservationButton from "./BookRoomButton";
-import RoomList from "./BookRoomTypesList";
+import BookRoomPhoneField from "./BookRoomPhoneField";
+import BookRoomNameField from "./BookRoomNameField";
+import BookRoomSurnameField from "./BookRoomSurnameField";
+import BookRoomButton from "./BookRoomButton";
+import BookRoomTypesList from "./BookRoomTypesList";
 import useBookRoom from "../hooks/useBookRoom";
 import BookRoomCalendar from "./BookRoomCalendar";
 import BookRoomSnackbar from "./BookRoomSnackbar";
@@ -61,7 +61,7 @@ export default function BookRoom() {
       <Typography color="primary" fontSize={25} fontWeight={900}>
         BOOK THE ROOM IN OUR HOTEL
       </Typography>
-      <RoomList value={selectedRoom} onChange={setSelectedRoom} />
+      <BookRoomTypesList value={selectedRoom} onChange={setSelectedRoom} />
       <Stack
         component="form"
         sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
@@ -73,15 +73,15 @@ export default function BookRoom() {
         </Typography>
         <Stack direction="row">
           <Stack sx={{ p: 1 }}>
-            <NameField name={name} setName={setName} />
-            <SurnameField surname={surname} setSurname={setSurname} />
-            <PhoneNumberField phone={phone} setPhone={setPhone} />
+            <BookRoomNameField name={name} setName={setName} />
+            <BookRoomSurnameField surname={surname} setSurname={setSurname} />
+            <BookRoomPhoneField phone={phone} setPhone={setPhone} />
             {error && <Alert severity="error">Error: {error.message}</Alert>}
           </Stack>
           <BookRoomCalendar date={date} setDate={setDate} />
         </Stack>
 
-        <CreateReservationButton
+        <BookRoomButton
           disabled={disabled}
           setClicked={setClicked}
           clicked={clicked}

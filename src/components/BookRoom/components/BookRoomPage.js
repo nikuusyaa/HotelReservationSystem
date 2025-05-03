@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import BookRoom from "./BookRoom";
 
-export default function MainPage() {
+export default function BookRoomPage() {
   return (
     <Box
       sx={{

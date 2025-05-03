@@ -1,5 +1,5 @@
 import { Box, Stack } from "@mui/system";
-import PhoneNumberField from "../../BookRoom/components/BookRoomPhoneField";
+import BookRoomPhoneField from "../../BookRoom/components/BookRoomPhoneField";
 import { useState } from "react";
 import { grey } from "@mui/material/colors";
 import CustomButton from "../../CustomButton";
@@ -19,7 +19,7 @@ export default function LoginPage() {
         Log in to User Section
       </Typography>
       <Stack p={10} pt={3}>
-        <PhoneNumberField phone={phone} setPhone={setPhone} />
+        <BookRoomPhoneField phone={phone} setPhone={setPhone} />
         <CustomButton
           component={Link}
           to="/user-reservation"

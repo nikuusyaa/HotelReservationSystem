@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 import { TextField } from "@mui/material";
 import { useState } from "react";
 
-export default function SurnameField({ surname, setSurname }) {
+export default function BookRoomSurnameField({ surname, setSurname }) {
   const [touchedSurname, setTouchedSurname] = useState(false);
   const surnameError = touchedSurname && surname.trim() === "";
 
