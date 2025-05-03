@@ -53,6 +53,8 @@ export default function LoginPopover({ anchorEl, setAnchorEl }) {
 
         <ListItem disablePadding>
           <ListItemButton
+            component={Link}
+            to="/service-management"
             onClick={() => {
               /* service */ handleClose();
             }}

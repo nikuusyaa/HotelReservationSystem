@@ -1,4 +1,3 @@
-// App.js
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import BookRoom from "./components/BookRoom/components/BookRoomPage";
@@ -8,6 +7,7 @@ import UserReservationPage from "./components/UserReservationPage/components/Use
 import LoginPage from "./components/Login/components/LoginPage";
 import IconButton from "@mui/material/IconButton";
 import { Link } from "react-router-dom";
+import ServiceManagementPage from "./components/ServiceManagement/components/ServiceManagementPage";
 
 //icons
 import BedIcon from "@mui/icons-material/Bed";
@@ -46,6 +46,10 @@ function App() {
 
             <Route path="/booking" element={<BookRoom />} />
             <Route path="/user-reservation" element={<UserReservationPage />} />
+            <Route
+              path="/service-management"
+              element={<ServiceManagementPage />}
+            />
             <Route path="/log-in" element={<LoginPage />} />
 
             <Route path="*" element={<Navigate to="/booking" replace />} />
