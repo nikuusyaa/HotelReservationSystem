@@ -17,7 +17,7 @@ export default function BookRoom() {
   const [phone, setPhone] = useState("");
   const [selectedRoom, setSelectedRoom] = useState("");
   const [clicked, setClicked] = useState(false);
-  const { bookRoom, loading, error, response } = useBookRoom();
+  const { bookRoom, error } = useBookRoom();
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [date, setDate] = useState([
     {
