@@ -1,10 +1,8 @@
 import { Button, Typography } from "@mui/material";
 
-export default function CustomButton({ onClick, disabled, to, component }) {
+export default function CustomButton({ onClick, disabled }) {
   return (
     <Button
-      to={to}
-      component={component}
       onClick={onClick}
       variant="outlined"
       disabled={disabled}
