@@ -1,64 +1,64 @@
 import { useState, useCallback } from "react";
+import { useAuth } from "../../../Contexts/AuthContext";
 
 const BOOKING_URL = "https://ids-api-production.up.railway.app/booking";
 
 /**
- * Hook for creating reservation
- *
- * Data format type:
- * {
- *   g_name: string,
- *   surname: string,
- *   phone_num: number,
- *   room_type: string
- * }
+ * Хук для создания бронирования с обновлением двух контекстов:
+ *  - BookingContext (setBookingResponse)
+ *  - AuthContext    (setAuthResponse)
  *
  * @returns {{
  *   bookRoom: (payload: {g_name: string, surname: string, phone_num: number, room_type: string}) => Promise<any>,
  *   loading: boolean,
- *   error: Error|null,
- *   response: any
+ *   error: Error|null
  * }}
  */
 export default function useBookRoom() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [response, setResponse] = useState(null);
 
-  const bookRoom = useCallback(async (payload) => {
-    const formattedPayload = {
-      ...payload,
-      phone_num: Number(payload.phone_num),
-      room_type: payload.room_type.toLowerCase(),
-    };
+  // Контекст аутентификации
+  const { setResponse: setAuthResponse } = useAuth();
 
-    setLoading(true);
-    setError(null);
+  const bookRoom = useCallback(
+    async (payload) => {
+      const formattedPayload = {
+        ...payload,
+        phone_num: Number(payload.phone_num),
+        room_type: payload.room_type.toLowerCase(),
+      };
 
-    try {
-      const res = await fetch(BOOKING_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formattedPayload),
-      });
+      setLoading(true);
+      setError(null);
 
-      if (!res.ok) {
-        const text = await res.text();
-        console.error("Booking error response:", text);
-        throw new Error(`Error HTTP ${res.status}`);
+      try {
+        const res = await fetch(BOOKING_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formattedPayload),
+        });
+
+        if (!res.ok) {
+          const text = await res.text();
+          console.error("Booking error response:", text);
+          throw new Error(`Error HTTP ${res.status}`);
+        }
+
+        const data = await res.json();
+
+        setAuthResponse(data.id);
+        console.log(data, data.id);
+        return data;
+      } catch (err) {
+        setError(err);
+        throw err;
+      } finally {
+        setLoading(false);
       }
-      const data = await res.json();
-      setResponse(data);
-      return data;
-    } catch (err) {
-      setError(err);
-      throw err;
-    } finally {
-      setLoading(false);
-    }
-  }, []);
+    },
+    [setAuthResponse]
+  );
 
-  return { bookRoom, loading, error, response };
+  return { bookRoom, loading, error };
 }

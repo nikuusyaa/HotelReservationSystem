@@ -10,6 +10,7 @@ import BookRoomCalendar from "./BookRoomCalendar";
 import { addDays } from "date-fns";
 import { formatDateTime } from "../utils/formatDateTime";
 import CustomSnackbar from "../../CustomSnackbar";
+import { useNavigate } from "react-router-dom";
 
 export default function BookRoom() {
   const [name, setName] = useState("");
@@ -27,6 +28,8 @@ export default function BookRoom() {
       key: "selection",
     },
   ]);
+
+  const navigate = useNavigate();
 
   /*useState  for tracking if all fields are filled correctly*/
   const [disabled, setDisabled] = useState(true);
@@ -54,6 +57,7 @@ export default function BookRoom() {
         check_out_date: formatDateTime(date[0].endDate),
       });
       setOpenSnackbar(true);
+      navigate("/user-reservation");
     } catch (e) {
       setSnackbarOpen(true);
     }
