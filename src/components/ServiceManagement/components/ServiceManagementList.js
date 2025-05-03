@@ -58,9 +58,9 @@ export default function ServiceManagementList() {
   return (
     <>
       <Stack>
-        <Typography fontSize={30} fontWeight={900} color="white" pb={2}>
+        <Typography fontSize={30} fontWeight={900} color="primary" pb={2}>
           <RoomServiceIcon sx={{ pr: 2 }} />
-          Requests
+          SERVICE REQUESTS
         </Typography>
       </Stack>
       <Box

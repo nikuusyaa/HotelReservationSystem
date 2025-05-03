@@ -5,7 +5,7 @@ import ServiceManagementList from "./ServiceManagementList";
 export default function ServiceManagementPage() {
   return (
     <Stack>
-      <ServiceManagementList></ServiceManagementList>
+      <ServiceManagementList/>
     </Stack>
   );
 }
