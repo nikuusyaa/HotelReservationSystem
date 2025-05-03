@@ -1,8 +1,11 @@
 import { Box } from "@mui/system";
 import { grey } from "@mui/material/colors";
 import { Typography } from "@mui/material";
+import { useAuth } from "../../../Contexts/AuthContext";
 
 export default function UserReservationPage() {
+  const response = useAuth();
+  console.log("HUI", response);
   return (
     <Box
       bgcolor={grey[800]}
