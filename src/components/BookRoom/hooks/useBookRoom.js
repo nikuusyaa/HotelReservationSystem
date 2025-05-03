@@ -47,7 +47,7 @@ export default function useBookRoom() {
       if (!res.ok) {
         const text = await res.text();
         console.error("Booking error response:", text);
-        throw new Error(`Ошибка HTTP ${res.status}`);
+        throw new Error(`Error HTTP ${res.status}`);
       }
       const data = await res.json();
       setResponse(data);
