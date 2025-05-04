@@ -69,6 +69,8 @@ export default function LoginPopover({ anchorEl, setAnchorEl }) {
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton
+            component={Link}
+            to="/payment-management"
             onClick={() => {
               /* payment */ handleClose();
             }}

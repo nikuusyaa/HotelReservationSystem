@@ -9,7 +9,7 @@ import {
   ListSubheader,
 } from "@mui/material";
 import { Stack } from "@mui/system";
-import { blue, blueGrey, grey } from "@mui/material/colors";
+import {  blueGrey, grey } from "@mui/material/colors";
 import HotelIcon from "@mui/icons-material/Hotel";
 import CustomSnackbar from "../../CustomSnackbar";
 import useReservations from "../hooks/useReservations";

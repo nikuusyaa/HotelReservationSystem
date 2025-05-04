@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import ServiceManagementPage from "./components/serviceManagement/components/ServiceManagementPage";
 import AdminRequests from "./components/admin/components/AdminRequests";
 import AdminReservations from "./components/admin/components/AdminReservations";
+import PaymentManagement from "./components/paymentManagement/components/PaymentManagement";
 
 //icons
 import BedIcon from "@mui/icons-material/Bed";
@@ -55,6 +56,7 @@ function App() {
               element={<ServiceManagementPage />}
             />
             <Route path="/log-in" element={<LoginPage />} />
+            <Route path="/payment-management" element={<PaymentManagement />} />
 
             <Route path="*" element={<Navigate to="/booking" replace />} />
           </Routes>
