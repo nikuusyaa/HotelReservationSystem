@@ -51,7 +51,7 @@ export default function UserRequestsList() {
         direction="row"
         gap={1}
         bgcolor={blue[600]}
-        p={2}
+        p={1}
         sx={{
           borderTopLeftRadius: 20,
           borderTopRightRadius: 20,

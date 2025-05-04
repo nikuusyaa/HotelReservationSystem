@@ -63,9 +63,9 @@ export default function ServicesList() {
         <Typography fontSize={20} fontWeight={900} color="primary">
           In-Hotel Services
         </Typography>
-        <List dense disablePadding>
+        <List disablePadding>
           {ihServices.map((svc) => (
-            <ListItem key={svc.id}>
+            <ListItem sx={{ p: 0 }} key={svc.id}>
               <ListItemText
                 primary={
                   <Typography
@@ -82,14 +82,14 @@ export default function ServicesList() {
           ))}
         </List>
 
-        <Divider sx={{ my: 1 }} />
+        <Divider sx={{ my: 0.2 }} />
 
         <Typography fontSize={20} fontWeight={900} color="primary">
-          Transfer Services
+          Tour Services
         </Typography>
-        <List dense disablePadding>
+        <List disablePadding>
           {tServices.map((svc) => (
-            <ListItem key={svc.id}>
+            <ListItem key={svc.id} sx={{ p: 0 }}>
               <ListItemText
                 primary={
                   <Typography
@@ -100,7 +100,16 @@ export default function ServicesList() {
                     {svc.s_name}
                   </Typography>
                 }
-                secondary={`Price: ${svc.price} USD`}
+                secondary={
+                  <>
+                    <Typography fontSize={14}>
+                      Price: {svc.price} USD
+                    </Typography>
+                    <Typography fontSize={14}>
+                      Location: {svc.location}
+                    </Typography>
+                  </>
+                }
               />
             </ListItem>
           ))}
