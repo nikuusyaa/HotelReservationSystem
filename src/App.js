@@ -9,6 +9,7 @@ import IconButton from "@mui/material/IconButton";
 import { Link } from "react-router-dom";
 import ServiceManagementPage from "./components/serviceManagement/components/ServiceManagementPage";
 import AdminRequests from "./components/admin/components/AdminRequests";
+import AdminReservations from "./components/admin/components/AdminReservations";
 
 //icons
 import BedIcon from "@mui/icons-material/Bed";
@@ -48,6 +49,7 @@ function App() {
             <Route path="/booking" element={<BookRoom />} />
             <Route path="/user-reservation" element={<UserReservationPage />} />
             <Route path="/admin-requests" element={<AdminRequests />} />
+            <Route path="/admin-reservations" element={<AdminReservations />} />
             <Route
               path="/service-management"
               element={<ServiceManagementPage />}

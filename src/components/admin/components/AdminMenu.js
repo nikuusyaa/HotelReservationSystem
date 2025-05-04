@@ -1,13 +1,14 @@
 import { IconButton, ListItemButton, Popover, Typography } from "@mui/material";
-
+import { Stack } from "@mui/system";
+import { blueGrey } from "@mui/material/colors";
+import { Link } from "react-router-dom";
 import { useState } from "react";
+
 //icons
 import MenuIcon from "@mui/icons-material/Menu";
 import PaymentIcon from "@mui/icons-material/Payment";
 import HotelIcon from "@mui/icons-material/Hotel";
 import RoomServiceIcon from "@mui/icons-material/RoomService";
-import { Stack } from "@mui/system";
-import { blueGrey } from "@mui/material/colors";
 
 export default function AdminMenu() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -47,13 +48,21 @@ export default function AdminMenu() {
             </Typography>
           </ListItemButton>
 
-          <ListItemButton sx={{ width: "100%", color: blueGrey[800] }}>
+          <ListItemButton
+            sx={{ width: "100%", color: blueGrey[800] }}
+            component={Link}
+            to="/admin-reservations"
+          >
             <HotelIcon />
             <Typography fontSize={15} fontWeight={600}>
               View Reservations
             </Typography>
           </ListItemButton>
-          <ListItemButton sx={{ width: "100%", color: blueGrey[800] }}>
+          <ListItemButton
+            sx={{ width: "100%", color: blueGrey[800] }}
+            component={Link}
+            to="/admin-requests"
+          >
             <RoomServiceIcon />
             <Typography fontSize={15} fontWeight={600}>
               View Services Requests

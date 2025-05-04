@@ -57,12 +57,19 @@ export default function RequestsList() {
   return (
     <>
       <Stack bgcolor={grey[800]}>
-        <Typography fontSize={30} fontWeight={900} color="white" p={0} m={0}>
+        <Typography
+          fontSize={30}
+          fontWeight={900}
+          color="white"
+          p={0}
+          m={0}
+          bgcolor="#282C34"
+        >
           <RoomServiceIcon sx={{ pr: 2 }} />
           SERVICE REQUESTS
         </Typography>
       </Stack>
-      <Box bgcolor={grey[800]} sx={{ maxHeight: 700, overflow: "auto" }}>
+      <Box bgcolor="#282C34" sx={{ maxHeight: "80vh", overflow: "auto" }}>
         <Box m={5}>
           <Stack container spacing={2}>
             {Object.entries(groups).map(([guest, items]) => (
