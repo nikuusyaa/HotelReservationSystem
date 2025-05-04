@@ -1,5 +1,5 @@
 import { Box, Stack } from "@mui/system";
-import BookRoomPhoneField from "../../BookRoom/components/BookRoomPhoneField";
+import BookRoomPhoneField from "../../bookingRoom/components/BookRoomPhoneField";
 import { useState } from "react";
 import { grey } from "@mui/material/colors";
 import CustomButton from "../../CustomButton";

@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
-import BookRoom from "./components/BookRoom/components/BookRoomPage";
+import BookRoom from "./components/bookingRoom/components/BookRoomPage";
 import { AppBar, Toolbar, Typography, Tooltip } from "@mui/material";
-import LoginBehavior from "./components/Login/components/LoginBehavior";
-import UserReservationPage from "./components/UserReservation/components/UserReservationPage";
-import LoginPage from "./components/Login/components/LoginPage";
+import LoginBehavior from "./components/login/components/LoginBehavior";
+import UserReservationPage from "./components/userReservation/components/UserReservationPage";
+import LoginPage from "./components/login/components/LoginPage";
 import IconButton from "@mui/material/IconButton";
 import { Link } from "react-router-dom";
-import ServiceManagementPage from "./components/ServiceManagement/components/ServiceManagementPage";
+import ServiceManagementPage from "./components/serviceManagement/components/ServiceManagementPage";
 
 //icons
 import BedIcon from "@mui/icons-material/Bed";
