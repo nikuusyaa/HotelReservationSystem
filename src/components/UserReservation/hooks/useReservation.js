@@ -4,7 +4,6 @@ import { useAuth } from "../../../Contexts/AuthContext";
 export default function useReservation() {
   let userId = useAuth().response;
   userId = userId?.guest_id;
-
   const RESERVATION_URL = `https://ids-api-production.up.railway.app/users/${userId}/reservations`;
 
   const [reservations, setReservations] = useState(null);
