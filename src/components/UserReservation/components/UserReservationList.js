@@ -50,6 +50,9 @@ export default function UserReservationsList() {
         sx={{
           borderTopLeftRadius: 20,
           borderTopRightRadius: 20,
+          position: "sticky",
+          top: 0,
+          zIndex: 10,
         }}
       >
         <Typography fontSize={25} fontWeight={900} gutterBottom align="center">
