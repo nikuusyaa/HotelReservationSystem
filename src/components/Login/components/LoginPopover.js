@@ -36,7 +36,7 @@ export default function LoginPopover({ anchorEl, setAnchorEl }) {
               handleClose();
             }}
             component={Link}
-            to="/admin"
+            to="/admin-requests"
           >
             <ListItemIcon>
               <AdminPanelSettingsIcon />

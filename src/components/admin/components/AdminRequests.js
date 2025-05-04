@@ -2,7 +2,7 @@ import { AppBar, Toolbar, Typography } from "@mui/material";
 import RequestsList from "./RequestsList";
 import AdminMenu from "./AdminMenu";
 
-export default function AdminPage() {
+export default function AdminRequests() {
   return (
     <>
       <AppBar
@@ -19,7 +19,7 @@ export default function AdminPage() {
           variant="dense"
           sx={{
             display: "flex",
-            justifyContent: "space-between", 
+            justifyContent: "space-between",
             alignItems: "center",
           }}
         >

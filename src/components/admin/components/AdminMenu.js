@@ -7,7 +7,7 @@ import PaymentIcon from "@mui/icons-material/Payment";
 import HotelIcon from "@mui/icons-material/Hotel";
 import RoomServiceIcon from "@mui/icons-material/RoomService";
 import { Stack } from "@mui/system";
-import { blue, blueGrey, grey } from "@mui/material/colors";
+import { blueGrey } from "@mui/material/colors";
 
 export default function AdminMenu() {
   const [anchorEl, setAnchorEl] = useState(null);
