@@ -1,14 +1,12 @@
 import { Stack } from "@mui/system";
-import useReservation from "../hooks/useReservation";
 import UserReservationsList from "./UserReservationList";
+import UserRequestsList from "./UserRequestsList";
 
 export default function UserReservationPage() {
-  const data = useReservation();
-  console.log(data.reservations);
-
   return (
-    <Stack>
+    <Stack direction="row" gap={5}>
       <UserReservationsList />
+      <UserRequestsList />
     </Stack>
   );
 }
