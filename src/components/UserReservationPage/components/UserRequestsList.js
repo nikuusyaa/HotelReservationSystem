@@ -12,6 +12,7 @@ import { Stack } from "@mui/system";
 import { blue, blueGrey, grey } from "@mui/material/colors";
 import CustomSnackbar from "../../CustomSnackbar";
 import useUserRequests from "../hooks/useUserRequests";
+import RequestButton from "./RequestButton";
 
 export default function UserRequestsList() {
   const [openSnackbar, setOpenSnackbar] = useState(false);
@@ -46,12 +47,16 @@ export default function UserRequestsList() {
 
   return (
     <Box mx="auto" bgcolor={grey[800]} borderRadius={5} pb={1}>
-      <Box
+      <Stack
+        direction="row"
+        gap={1}
         bgcolor={blue[600]}
-        p={1}
+        p={2}
         sx={{
           borderTopLeftRadius: 20,
           borderTopRightRadius: 20,
+          pr: 2,
+          pl: 2,
         }}
       >
         <Typography
@@ -63,7 +68,8 @@ export default function UserRequestsList() {
         >
           Your Service Requests
         </Typography>
-      </Box>
+        <RequestButton />
+      </Stack>
 
       <List>
         {requests.map((req) => (

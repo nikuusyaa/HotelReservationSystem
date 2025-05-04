@@ -150,7 +150,7 @@ export default function UserReservationsList() {
                 }
               />
             </ListItemButton>
-            <Divider component="li" color="white" />
+            <Divider component="li" sx={{ bgcolor: grey[700] }} />
           </React.Fragment>
         ))}
       </List>
