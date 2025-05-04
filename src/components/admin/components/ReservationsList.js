@@ -17,7 +17,7 @@ import ReservationDates from "../../ReservationDates";
 
 export default function ReservationsList() {
   const [openSnackbar, setOpenSnackbar] = useState(false);
-  const { reservations, loading, error } = useReservations();
+  const { reservations, loading, error, refetch } = useReservations();
 
   if (loading) {
     return (
@@ -117,6 +117,7 @@ export default function ReservationsList() {
                               Check-in date: {res.check_in_date}
                             </Typography>
                             <ReservationDates
+                              refetch={refetch}
                               reservationID={res.reservation_id}
                               firstDate={res.check_out_date}
                               checkInOrCheckOut="check-in"
@@ -131,6 +132,7 @@ export default function ReservationsList() {
                               Check-out date: {res.check_out_date}
                             </Typography>
                             <ReservationDates
+                              refetch={refetch}
                               reservationID={res.reservation_id}
                               firstDate={res.check_in_date}
                               checkInOrCheckOut="check-out"

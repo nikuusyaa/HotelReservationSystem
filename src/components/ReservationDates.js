@@ -15,6 +15,7 @@ export default function ReservationDates({
   firstDate,
   checkInOrCheckOut,
   reservationID,
+  refetch,
 }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const [date, setDate] = useState();
@@ -42,6 +43,8 @@ export default function ReservationDates({
         checkIn,
         checkOut
       );
+      refetch();
+      handleClose();
     } catch (e) {
       console.error(e);
     }
