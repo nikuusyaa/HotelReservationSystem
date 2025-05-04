@@ -74,7 +74,7 @@ export default function RequestsList() {
           <Stack container spacing={2}>
             {Object.entries(groups).map(([guest, items]) => (
               <Box bgcolor={grey[600]}>
-                <Paper elevation={3} sx={{ maxHeight: 150, overflow: "auto" }}>
+                <Paper elevation={3} sx={{ maxHeight: 200, overflow: "auto" }}>
                   <ListSubheader disableGutters>
                     <Typography
                       fontSize={20}

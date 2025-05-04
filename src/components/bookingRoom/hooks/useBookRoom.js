@@ -46,7 +46,6 @@ export default function useBookRoom() {
         }
 
         const data = await res.json();
-
         setAuthResponse(data);
         return data;
       } catch (err) {
