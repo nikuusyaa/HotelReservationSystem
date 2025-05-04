@@ -59,8 +59,18 @@ export default function ServicesList() {
 
   return (
     <>
-      <Box sx={{ p: 2, maxHeight: 400, overflowY: "auto" }}>
-        <Typography fontSize={20} fontWeight={900} color="primary">
+      <Box sx={{ m: 1, pr: 2, pl: 2, maxHeight: 300, overflowY: "auto" }}>
+        <Typography
+          fontSize={20}
+          fontWeight={900}
+          color="primary"
+          sx={{
+            position: "sticky",
+            top: 0,
+            bgcolor: "background.paper",
+            zIndex: 10,
+          }}
+        >
           In-Hotel Services
         </Typography>
         <List disablePadding>
@@ -84,7 +94,17 @@ export default function ServicesList() {
 
         <Divider sx={{ my: 0.2 }} />
 
-        <Typography fontSize={20} fontWeight={900} color="primary">
+        <Typography
+          fontSize={20}
+          fontWeight={900}
+          color="primary"
+          sx={{
+            position: "sticky",
+            top: 0,
+            bgcolor: "background.paper",
+            zIndex: 10,
+          }}
+        >
           Tour Services
         </Typography>
         <List disablePadding>
@@ -96,6 +116,7 @@ export default function ServicesList() {
                     color={blueGrey[800]}
                     fontSize={18}
                     fontWeight={900}
+                    m={0}
                   >
                     {svc.s_name}
                   </Typography>
