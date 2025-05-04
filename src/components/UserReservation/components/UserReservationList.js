@@ -35,7 +35,6 @@ export default function UserReservationsList() {
       />
     );
   }
-
   if (!reservations || reservations.length === 0) {
     return (
       <Typography variant="body1" align="center" mt={4}>

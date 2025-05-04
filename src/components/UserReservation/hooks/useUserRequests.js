@@ -15,7 +15,8 @@ const BASE_URL = "https://ids-api-production.up.railway.app";
  * }}
  */
 export default function useUserRequests() {
-  const userId = useAuth().response;
+  let userId = useAuth().response;
+  userId = userId.guest_id;
   const [requests, setRequests] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

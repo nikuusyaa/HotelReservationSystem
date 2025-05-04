@@ -47,8 +47,7 @@ export default function useBookRoom() {
 
         const data = await res.json();
 
-        setAuthResponse(data.id);
-        console.log(data, data.id);
+        setAuthResponse(data);
         return data;
       } catch (err) {
         setError(err);

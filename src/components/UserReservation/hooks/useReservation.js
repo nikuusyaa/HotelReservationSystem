@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../../../Contexts/AuthContext";
 
 export default function useReservation() {
-  const userId = useAuth().response;
+  let userId = useAuth().response;
+  userId = userId?.guest_id;
 
   const RESERVATION_URL = `https://ids-api-production.up.railway.app/users/${userId}/reservations`;
 
@@ -25,7 +26,7 @@ export default function useReservation() {
     })
       .then((res) => {
         if (!res.ok) {
-          throw new Error(`HTTP ошибка ${res.status}`);
+          throw new Error(`HTTP Error ${res.status}`);
         }
         return res.json();
       })
