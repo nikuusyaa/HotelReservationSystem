@@ -3,7 +3,7 @@ import "./App.css";
 import BookRoom from "./components/bookingRoom/components/BookRoomPage";
 import { AppBar, Toolbar, Typography, Tooltip } from "@mui/material";
 import LoginBehavior from "./components/login/components/LoginBehavior";
-import UserReservationPage from "./components/userReservation/components/UserReservationPage";
+import UserReservationPage from "./components/userReservation-temp/components/UserReservationPage";
 import LoginPage from "./components/login/components/LoginPage";
 import IconButton from "@mui/material/IconButton";
 import { Link } from "react-router-dom";
