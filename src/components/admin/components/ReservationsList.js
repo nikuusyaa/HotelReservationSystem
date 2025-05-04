@@ -9,10 +9,11 @@ import {
   ListSubheader,
 } from "@mui/material";
 import { Stack } from "@mui/system";
-import {  blueGrey, grey } from "@mui/material/colors";
+import { blueGrey, grey } from "@mui/material/colors";
 import HotelIcon from "@mui/icons-material/Hotel";
 import CustomSnackbar from "../../CustomSnackbar";
 import useReservations from "../hooks/useReservations";
+import ReservationDates from "../../ReservationDates";
 
 export default function ReservationsList() {
   const [openSnackbar, setOpenSnackbar] = useState(false);
@@ -107,20 +108,34 @@ export default function ReservationsList() {
                               Room: {res.room_num}
                             </Typography>
                           </Stack>
-                          <Typography
-                            fontSize={20}
-                            fontWeight={700}
-                            color={blueGrey[800]}
-                          >
-                            Check-in date: {res.check_in_date}
-                          </Typography>
-                          <Typography
-                            fontSize={20}
-                            fontWeight={700}
-                            color={blueGrey[800]}
-                          >
-                            Check-out date: {res.check_out_date}
-                          </Typography>
+                          <Stack direction="row">
+                            <Typography
+                              fontSize={20}
+                              fontWeight={700}
+                              color={blueGrey[800]}
+                            >
+                              Check-in date: {res.check_in_date}
+                            </Typography>
+                            <ReservationDates
+                              reservationID={res.reservation_id}
+                              firstDate={res.check_out_date}
+                              checkInOrCheckOut="check-in"
+                            />
+                          </Stack>
+                          <Stack direction="row">
+                            <Typography
+                              fontSize={20}
+                              fontWeight={700}
+                              color={blueGrey[800]}
+                            >
+                              Check-out date: {res.check_out_date}
+                            </Typography>
+                            <ReservationDates
+                              reservationID={res.reservation_id}
+                              firstDate={res.check_in_date}
+                              checkInOrCheckOut="check-out"
+                            />
+                          </Stack>
                           <Typography
                             fontSize={20}
                             fontWeight={700}
