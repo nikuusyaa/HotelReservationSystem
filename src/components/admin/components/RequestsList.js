@@ -11,7 +11,7 @@ import {
 import CustomSnackbar from "../../CustomSnackbar";
 import { Stack } from "@mui/system";
 import { blue, blueGrey, grey } from "@mui/material/colors";
-import useServiceRequests from "../../serviceManagement-temp/hooks/useServiceRequests";
+import useServiceRequests from "../../serviceManagement/hooks/useServiceRequests";
 
 //icons
 import RoomServiceIcon from "@mui/icons-material/RoomService";
