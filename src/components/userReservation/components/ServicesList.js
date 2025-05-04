@@ -12,6 +12,8 @@ import {
 import { useInHotelServices } from "../hooks/useInHotelServices";
 import { useTourServices } from "../hooks/useTourServices";
 import { blueGrey } from "@mui/material/colors";
+import BookServiceButton from "./BookServiceButton";
+import { Stack } from "@mui/system";
 
 export default function ServicesList() {
   // Fetch In-Hotel services
@@ -84,6 +86,7 @@ export default function ServicesList() {
                     fontWeight={900}
                   >
                     {svc.s_name}
+                    <BookServiceButton />
                   </Typography>
                 }
                 secondary={`Price: ${svc.price} USD`}
@@ -119,6 +122,7 @@ export default function ServicesList() {
                     m={0}
                   >
                     {svc.s_name}
+                    <BookServiceButton />
                   </Typography>
                 }
                 secondary={
