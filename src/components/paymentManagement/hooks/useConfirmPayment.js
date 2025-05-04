@@ -23,7 +23,6 @@ export function useConfirmPayment() {
       const response = await fetch(`${BASE_URL}/${paymentId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        // если нужен body, можно добавить
       });
 
       if (!response.ok) {
