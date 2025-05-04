@@ -1,5 +1,6 @@
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import RequestsList from "./RequestsList";
+import AdminMenu from "./AdminMenu";
 
 export default function AdminPage() {
   return (
@@ -7,17 +8,25 @@ export default function AdminPage() {
       <AppBar
         position="fixed"
         color="default"
-        elevation={5}
+        elevation={10}
         sx={{
           top: 75,
           left: 0,
           right: 0,
         }}
       >
-        <Toolbar variant="dense">
-          <Typography fontSize={30} fontWeight={900}>
+        <Toolbar
+          variant="dense"
+          sx={{
+            display: "flex",
+            justifyContent: "space-between", 
+            alignItems: "center",
+          }}
+        >
+          <Typography sx={{ pl: 2 }} fontSize={30} fontWeight={900}>
             Hello, You are logged in as Administrator !
           </Typography>
+          <AdminMenu />
         </Toolbar>
         <RequestsList />
       </AppBar>
