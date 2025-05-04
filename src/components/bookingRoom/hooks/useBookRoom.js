@@ -4,7 +4,7 @@ import { useAuth } from "../../../Contexts/AuthContext";
 const BOOKING_URL = "https://ids-api-production.up.railway.app/booking";
 
 /**
- * Хук для создания бронирования с обновлением двух контекстов:
+ * Hook for creating reservation
  *  - BookingContext (setBookingResponse)
  *  - AuthContext    (setAuthResponse)
  *
@@ -18,7 +18,7 @@ export default function useBookRoom() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Контекст аутентификации
+  // Auth context
   const { setResponse: setAuthResponse } = useAuth();
 
   const bookRoom = useCallback(
