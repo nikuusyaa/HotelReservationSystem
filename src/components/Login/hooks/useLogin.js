@@ -21,7 +21,7 @@ export default function useLogin() {
           body: JSON.stringify({ phone_num: Number(phoneNum) }),
         });
 
-        if (!res.ok) {
+        if (res.status >= 400) {
           throw new Error(`Error HTTP ${res.status}`);
         }
 
