@@ -41,7 +41,11 @@ export default function AdminMenu() {
         }}
       >
         <Stack alignItems="flex-start">
-          <ListItemButton sx={{ width: "100%", color: blueGrey[800] }}>
+          <ListItemButton
+            sx={{ width: "100%", color: blueGrey[800] }}
+            component={Link}
+            to="/admin-payments"
+          >
             <PaymentIcon />
             <Typography fontSize={15} fontWeight={600}>
               View Payments

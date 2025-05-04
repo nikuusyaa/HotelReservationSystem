@@ -14,6 +14,7 @@ import PaymentManagement from "./components/paymentManagement/components/Payment
 
 //icons
 import BedIcon from "@mui/icons-material/Bed";
+import AdminPayments from "./components/admin/components/AdminPayments";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
             <Route path="/user-reservation" element={<UserReservationPage />} />
             <Route path="/admin-requests" element={<AdminRequests />} />
             <Route path="/admin-reservations" element={<AdminReservations />} />
+            <Route path="/admin-payments" element={<AdminPayments />} />
             <Route
               path="/service-management"
               element={<ServiceManagementPage />}
