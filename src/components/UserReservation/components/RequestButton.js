@@ -5,7 +5,7 @@ import ServicesList from "./ServicesList";
 //icons
 import AddIcon from "@mui/icons-material/Add";
 
-export default function RequestButton() {
+export default function RequestButton({ onSuccess }) {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -41,7 +41,7 @@ export default function RequestButton() {
           horizontal: "left",
         }}
       >
-        <ServicesList></ServicesList>
+        <ServicesList onSuccess={onSuccess}></ServicesList>
       </Popover>
     </>
   );

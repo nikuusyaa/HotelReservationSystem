@@ -16,7 +16,7 @@ import RequestButton from "./RequestButton";
 
 export default function UserRequestsList() {
   const [openSnackbar, setOpenSnackbar] = useState(false);
-  const { requests, loading, error } = useUserRequests();
+  const { requests, loading, error, refetch } = useUserRequests();
 
   if (loading) {
     return (
@@ -46,7 +46,13 @@ export default function UserRequestsList() {
   }
 
   return (
-    <Box mx="auto" bgcolor={grey[800]} borderRadius={5} pb={1}>
+    <Box
+      mx="auto"
+      bgcolor={grey[800]}
+      borderRadius={5}
+      pb={1}
+      sx={{ maxHeight: 500, overflow: "auto" }}
+    >
       <Stack
         direction="row"
         gap={1}
@@ -57,6 +63,9 @@ export default function UserRequestsList() {
           borderTopRightRadius: 20,
           pr: 2,
           pl: 2,
+          position: "sticky",
+          top: 0,
+          zIndex: 10,
         }}
       >
         <Typography
@@ -68,7 +77,7 @@ export default function UserRequestsList() {
         >
           Your Service Requests
         </Typography>
-        <RequestButton />
+        <RequestButton onSuccess={refetch} />
       </Stack>
 
       <List>

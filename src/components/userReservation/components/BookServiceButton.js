@@ -7,14 +7,14 @@ import CustomSnackbar from "../../CustomSnackbar";
 //icons
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 
-export default function BookServiceButton({ requestId }) {
+export default function BookServiceButton({ requestId, onSuccess }) {
   const { addUserService, loading, error } = useAddUserService();
-
   const [snackbarOpen, setSnackbarOpen] = useState(false);
+
   if (loading) {
     return (
-      <Box display="flex" justifyContent="center" mt={4}>
-        <CircularProgress />
+      <Box display="flex" justifyContent="center" mt={0}>
+        <CircularProgress size="30px" />
       </Box>
     );
   }
@@ -24,8 +24,8 @@ export default function BookServiceButton({ requestId }) {
 
   const handleAdd = async () => {
     try {
-      const result = await addUserService(requestId);
-      console.log("Added service:", result);
+      await addUserService(requestId);
+      onSuccess();
     } catch (e) {
       console.error(e);
     }
